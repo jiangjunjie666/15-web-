@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>魔法失灵了</title>
+  <script src="js/vue.js"></script>
+  <link rel=stylesheet href="css/style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <section class="elements">
+      <h3>Elements</h3>
+      <div class="element">
+        <div class="name">Carbon</div>
+        <div class="value">
+          <span>2</span>
+        </div>
+      </div>
+      <div class="element">
+        <div class="name">Hydrogen</div>
+        <div class="value">
+          <span>40</span>
+        </div>
+      </div>
+      <div class="element">
+        <div class="name">Oxygen</div>
+        <div class="value">
+          <span>20</span>
+        </div>
+      </div>
+      <div class="element">
+        <div class="name">Magic</div>
+        <div class="value">
+          <button @click="update(--value)">-</button>
+          <span>{{ value }}</span>
+          <button @click="update(++value)">+</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const { reactive, toRefs, createApp } = Vue;
+
+    const data = reactive({
+      value: 100
+    });
+    //TODO：待修复代码
+    let { value } = toRefs(data)  //结构赋值将value失去的响应式
+    //利用toRefs 恢复响应式
+
+
+    function update(val) {
+      value = val
+    }
+    const app = createApp({
+      setup() {
+        return {
+          value,
+          update
+        };
+      }
+    });
+    app.mount('#app');
+  </script>
+
+
+</body>
+
+</html>

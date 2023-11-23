@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    top: 0;
+  }
+  .set {
+    margin: 15px auto;
+    width: 600px;
+  }
+  .container {
+    width: 600px;
+    height: 600px;
+    background-color: #225675;
+    margin: 40px auto;
+    outline: 20px solid #7dd9ff;
+    position: relative;
+  }
+  .snake {
+    position: absolute;
+  }
+  .snake-head {
+    width: 0px;
+    height: 0px;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid rgb(157, 219, 177);
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    transform: rotate(0deg);
+  }
+  
+  .snake-body {
+    border-radius: 50%;
+    background-color: #7db5ff;
+  }
+  .egg {
+    position: absolute;
+    background-color: rgb(241, 54, 232);
+    border-radius: 50%;
+  }
+  
+  .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cover .content {
+    width: 60%;
+    height: 50px;
+    background-color: rgb(134, 225, 237);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

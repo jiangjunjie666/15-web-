@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>司龄统计</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- 引入 Vue 3  -->
+    <script src="./lib/vue3.global.js"></script>
+    <!-- 引入 ECharts  -->
+    <script src="./lib/echarts.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1 class="top-bar">M 公司司龄统计表</h1>
+      <!-- 主体 -->
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>司龄</th>
+              <th>姓名</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(group, age) in groupedPeople" :key="age">
+              <td>{{ age }}</td>
+              <td>
+                <span v-for="(person, index) in group" :key="person.name">
+                  {{ person.name }}<span v-if="index < group.length - 1"
+                    >、</span
+                  >
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="chart"></div>
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

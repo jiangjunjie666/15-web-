@@ -1,0 +1,109 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <script src="./lib/vue.global.js"></script>
+  <link rel="stylesheet" href="./lib/element-plus@2.3.7/index.css">
+  <script src="./lib/element-plus@2.3.7/index.full.js"></script>
+  <link rel="stylesheet" href="./css/index.css">
+  <title>燃烧你的卡路里</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>减脂饮食规划</h1>
+    <!-- 表单 -->
+    <div class="form">
+      <el-form :model="form" label-width="100px">
+        <!-- 性别 -->
+        <el-form-item label="性别">
+          <el-radio-group v-model="form.gender" class="ml-4">
+            <el-radio label="男士" border size="large"></el-radio>
+            <el-radio label="女士" border size="large"></el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item label="体重kg:">
+          <el-input-number :min="18" v-model="form.age"></el-input-number>
+        </el-form-item>
+        <el-form-item label="体重kg:">
+          <el-input-number :min="40" v-model="form.weight"></el-input-number>
+        </el-form-item>
+        <el-form-item label="减脂目标kg:">
+          <el-input-number :min="1" v-model="form.goal"></el-input-number>
+        </el-form-item>
+        <el-button id="submit" type="primary" @click="submit">定制方案</el-button>
+      </el-form>
+    </div>
+    <!--表单 end  -->
+
+    <!-- 抽屉 start -->
+    <!-- TODO：待补充代码，点击按钮时显示抽屉组件 -->
+    <el-drawer title="我是标题" :with-header="false" size="60%" :direction="direction" v-model="drawer">
+      <div class="drawer">
+        <el-descriptions title="减脂饮食方案" border>
+          <el-descriptions-item label="碳水化合物摄入">{{carbohydrateIn}}kal</el-descriptions-item>
+          <el-descriptions-item label="蛋白质摄入">{{proteinIn}}kal</el-descriptions-item>
+          <el-descriptions-item label="脂肪摄入">{{fatIn}}kal</el-descriptions-item>
+          <el-descriptions-item label="每日进食总热量">{{eatFoodEntryByDay}}kal</el-descriptions-item>
+        </el-descriptions>
+        <el-descriptions class="descriptions" title="每日摄入重量" border>
+          <el-descriptions-item label="碳水化合物摄入">{{carbohydrateG}}g</el-descriptions-item>
+          <el-descriptions-item label="蛋白质摄入">{{proteinG}}g</el-descriptions-item>
+          <el-descriptions-item label="脂肪摄入">{{fatG}}g</el-descriptions-item>
+        </el-descriptions>
+        <el-descriptions class="descriptions" title="早餐" border></el-descriptions>
+        <el-table :data="breakfast" stripe style="width: 100%">
+          <el-table-column prop="name" label="食物名称" width="120">
+          </el-table-column>
+          <el-table-column prop="weight" label="重量(g)" width="100">
+          </el-table-column>
+          <el-table-column prop="carbohydrate" label="碳水化合物(g)" width="120">
+          </el-table-column>
+          <el-table-column prop="protein" label="蛋白质(g)" width="100">
+          </el-table-column>
+          <el-table-column prop="fat" label="脂肪(g)" width="100">
+          </el-table-column>
+          <el-table-column prop="kcal" label="热量(kcal)"> </el-table-column>
+        </el-table>
+        <el-descriptions class="descriptions" title="午餐" border></el-descriptions>
+        <el-table :data="lunch" stripe style="width: 100%">
+          <el-table-column prop="name" label="食物名称" width="120">
+          </el-table-column>
+          <el-table-column prop="weight" label="重量(g)" width="100">
+          </el-table-column>
+          <el-table-column prop="carbohydrate" label="碳水化合物(g)" width="120">
+          </el-table-column>
+          <el-table-column prop="protein" label="蛋白质(g)" width="100">
+          </el-table-column>
+          <el-table-column prop="fat" label="脂肪(g)" width="100">
+          </el-table-column>
+          <el-table-column prop="kcal" label="热量(kcal)"> </el-table-column>
+        </el-table>
+        <el-descriptions class="descriptions" title="晚餐" border></el-descriptions>
+        <el-table :data="dinner" stripe style="width: 100%">
+          <el-table-column prop="name" label="食物名称" width="120">
+          </el-table-column>
+          <el-table-column prop="weight" label="重量(g)" width="100">
+          </el-table-column>
+          <el-table-column prop="carbohydrate" label="碳水化合物(g)" width="120">
+          </el-table-column>
+          <el-table-column prop="protein" label="蛋白质(g)" width="100">
+          </el-table-column>
+          <el-table-column prop="fat" label="脂肪(g)" width="100">
+          </el-table-column>
+          <el-table-column prop="kcal" label="热量(kcal)"> </el-table-column>
+        </el-table>
+      </div>
+    </el-drawer>
+    <!-- 抽屉 end -->
+    <!-- 检测脚本取值，请勿修改 -->
+    <input type="hidden" id="dinner" :value="desDinner" />
+
+  </div>
+  <script src="./lib/axios.js"></script>
+  <script src="./js/index.js"></script>
+
+</body>
+
+</html>

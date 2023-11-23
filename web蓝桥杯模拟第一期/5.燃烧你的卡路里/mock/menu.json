@@ -1,0 +1,272 @@
+{
+  "breakfast": [
+    {
+      "name": "牛奶",
+      "carbohydrate": 5,
+      "protein": 3,
+      "fat": 3.8,
+      "kcal": 66.2,
+      "weight": 100
+    },
+    {
+      "name": "馒头",
+      "carbohydrate": 47,
+      "protein": 7,
+      "fat": 1.1,
+      "kcal": 223,
+      "weight": 100
+    },
+    {
+      "name": "鸡蛋",
+      "carbohydrate": 1.5,
+      "protein": 12.7,
+      "fat": 9.0,
+      "kcal": 138,
+      "weight": 100
+    },
+    {
+      "name": "苹果",
+      "carbohydrate": 13.7,
+      "protein": 0.4,
+      "fat": 0.2,
+      "kcal": 53,
+      "weight": 100
+    },
+    {
+      "name": "紫薯",
+      "carbohydrate": 31.7,
+      "protein": 1.2,
+      "fat": 0.3,
+      "kcal": 133,
+      "weight": 100
+    },
+    {
+      "name": "煮玉米",
+      "carbohydrate": 17.1,
+      "protein": 3,
+      "fat": 0.9,
+      "kcal": 84,
+      "weight": 100
+    },
+    {
+      "name": "菜包子",
+      "carbohydrate": 25.89,
+      "protein": 6.32,
+      "fat": 1.79,
+      "kcal": 139.92,
+      "weight": 100
+    },
+    {
+      "name": "西兰花",
+      "carbohydrate": 27,
+      "protein": 3.5,
+      "fat": 0.6,
+      "kcal": 27,
+      "weight": 100
+    },
+    {
+      "name": "无油煎蛋",
+      "carbohydrate": 0.2,
+      "protein": 12.3,
+      "fat": 11.7,
+      "kcal": 164,
+      "weight": 100
+    },
+    {
+      "name": "燕麦片",
+      "carbohydrate": 77.4,
+      "protein": 10.1,
+      "fat": 0.2,
+      "kcal": 338,
+      "weight": 100
+    },
+    {
+      "name": "蓝莓",
+      "carbohydrate": 14.49,
+      "protein": 0.74,
+      "fat": 0.33,
+      "kcal": 57,
+      "weight": 100
+    }
+  ],
+  "dinner": [
+    {
+      "name": "糙米饭",
+      "kcal": 115.67,
+      "protein": 2.6,
+      "fat": 0.6,
+      "carbohydrate": 25.37,
+      "weight": 100
+    },
+    {
+      "name": "虾仁炒蛋",
+      "kcal": 81.21,
+      "protein": 9.44,
+      "fat": 4.22,
+      "carbohydrate": 1.48,
+      "weight": 100
+    },
+    {
+      "name": "清炒油麦菜",
+      "kcal": 27.71,
+      "protein": 1.17,
+      "fat": 1.93,
+      "carbohydrate": 2.49,
+      "weight": 100
+    },
+    {
+      "name": "平菇炒牛肉",
+      "kcal": 67.97,
+      "protein": 8.51,
+      "fat": 2.45,
+      "carbohydrate": 3.47,
+      "weight": 100
+    },
+    {
+      "name": "土豆炒牛蛙",
+      "kcal": 106.7,
+      "protein": 6.57,
+      "fat": 3.42,
+      "carbohydrate": 13.11,
+      "weight": 100
+    },
+    {
+      "name": "土豆炖排骨",
+      "kcal": 200,
+      "protein": 9.35,
+      "fat": 15.24,
+      "carbohydrate": 6.73,
+      "weight": 100
+    },
+    {
+      "name": "红烧牛肉萝卜",
+      "kcal": 65.18,
+      "protein": 5.59,
+      "fat": 1.87,
+      "carbohydrate": 7.09,
+      "weight": 100
+    },
+    {
+      "name": "鸡蛋羹",
+      "kcal": 61,
+      "protein": 5.09,
+      "fat": 4.05,
+      "carbohydrate": 1.01,
+      "weight": 100
+    },
+    {
+      "name": "番茄炒蛋",
+      "kcal": 84,
+      "protein": 4.7,
+      "fat": 5.96,
+      "carbohydrate": 3.52,
+      "weight": 100
+    },
+    {
+      "name": "凉拌西葫芦",
+      "kcal": 41.25,
+      "protein": 1.45,
+      "fat": 1.03,
+      "carbohydrate": 6.86,
+      "weight": 100
+    },
+    {
+      "name": "青椒炒鱿鱼",
+      "kcal": 74.4,
+      "protein": 9.25,
+      "fat": 2.29,
+      "carbohydrate": 3.85,
+      "weight": 100
+    }
+  ],
+  "lunch": [
+    {
+      "name": "紫米饭",
+      "carbohydrate": 25.38,
+      "protein": 2.7,
+      "fat": 0.43,
+      "kcal": 115.33,
+      "weight": 100
+    },
+    {
+      "name": "白斩鸡",
+      "carbohydrate": 1.39,
+      "protein": 9.36,
+      "fat": 5.25,
+      "kcal": 90.24,
+      "weight": 100
+    },
+    {
+      "name": "蚝油生菜",
+      "kcal": 26.28,
+      "protein": 1.22,
+      "fat": 1.14,
+      "carbohydrate": 3.06,
+      "weight": 100
+    },
+    {
+      "name": "豆干炒芹菜",
+      "kcal": 126.01,
+      "protein": 4.95,
+      "fat": 7.7,
+      "carbohydrate": 9.86,
+      "weight": 100
+    },
+    {
+      "name": "紫甘蓝炒青椒",
+      "kcal": 45.79,
+      "protein": 1.26,
+      "fat": 2.56,
+      "carbohydrate": 5.85,
+      "weight": 100
+    },
+    {
+      "name": "冬瓜排骨汤",
+      "kcal": 51.84,
+      "protein": 2.86,
+      "fat": 4.22,
+      "carbohydrate": 0.83,
+      "weight": 100
+    },
+    {
+      "name": "清蒸鱼",
+      "kcal": 101.86,
+      "protein": 17.92,
+      "fat": 3.27,
+      "carbohydrate": 0.22,
+      "weight": 100
+    },
+    {
+      "name": "西芹百合",
+      "kcal": 83.06,
+      "protein": 1.19,
+      "fat": 5.33,
+      "carbohydrate": 8.78,
+      "weight": 100
+    },
+    {
+      "name": "清炒白菜",
+      "kcal": 31.45,
+      "protein": 1.7,
+      "fat": 1.17,
+      "carbohydrate": 3.88,
+      "weight": 100
+    },
+    {
+      "name": "青椒肉丝",
+      "kcal": 112.37,
+      "protein": 9.75,
+      "fat": 5.78,
+      "carbohydrate": 5.9,
+      "weight": 100
+    },
+    {
+      "name": "豌豆炒虾仁",
+      "kcal": 173.34,
+      "protein": 13.73,
+      "fat": 2.27,
+      "carbohydrate": 26.4,
+      "weight": 100
+    }
+  ]
+}

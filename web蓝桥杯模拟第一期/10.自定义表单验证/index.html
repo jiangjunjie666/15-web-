@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义表单验证器</title>
+    <script src="./lib/vue.global.js"></script> <!-- 导入 Vue.js -->
+    <!-- 导入自定义组件和样式文件 -->
+    <script src="./js/util.js"></script>
+    <script src="./components/FormValidator.js"></script>
+    <script src="./components/FormInput.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- 使用 form-validator 组件 -->
+        <form-validator class="form-container" ref="form" :rules="formRules" :form-data="formData" @valid="handelerr">
+            <!-- 使用 form-input 组件，分别绑定了 nickname 和 email 字段 -->
+            <form-input id="nickname" v-model="formData.nickname" :show-message="errorMessage.nickname" :holder="`nickname`"></form-input>
+            <form-input id="email" v-model="formData.email" :show-message="errorMessage.email" :holder="`email (8-20 characters)`"></form-input>
+            <div>
+                <button class="btn" type="submit" @click="submitted">Subscribe Now</button>
+            </div>
+        </form-validator>
+
+        <!-- 显示验证成功的模态框 -->
+        <div v-if="successModal" id="success-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" @click="closeModal">&times;</span>
+                <p>Form validation passed</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let formData; // formData 变量用于存储表单数据
+        let successModal;
+        
+        const { ref, createApp, computed, watch } = Vue; // 导入 Vue 相关功能
+        const app = createApp({
+            setup() {
+                successModal = ref(false); // successModal 变量用于控制成功模态框的显示状态
+
+                let errorMessage = ref({
+                    nickname: null,
+                    pass: null
+                }); // errorMessage 变量用于存储错误消息
+
+                formData = ref({
+                    nickname: '',
+                    email: '',
+                }); // formData 变量用于存储表单数据
+
+                // 自定义密码验证函数
+                var validatePass = (rule, value, callback) => {
+                    if (value == '') {
+                        callback(new Error('昵称不能为空'));
+                    } else {
+                        callback();
+                    }
+                };
+
+                // 定义表单验证规则
+                const formRules = {
+                    nickname: [{ validator: validatePass }], // 针对 nickname 字段的验证规则
+                    email: [
+                        { required: true, message: '邮箱不能为空' }, // 邮箱字段必填规则
+                        { type: 'email', min: 8, max: 20, message: '邮箱不符合规则或者长度不符' }, // 邮箱格式规则
+                    ]
+                };
+
+                const form = ref(null); // form 变量用于引用 form-validator 组件
+
+                // 表单提交函数
+                const submitted = async () => {
+                    // 调用 form-validator 的方法进行表单验证
+                    let  isVailed = await form.value.validateForm();
+                    if (isVailed) {
+                        // 显示成功模态框
+                        successModal.value = true;
+                    }
+                };
+
+                // 关闭成功模态框函数
+                const closeModal = () => {
+                    // 隐藏成功模态框
+                    successModal.value = false;
+                };
+
+                // 处理表单验证错误信息的函数
+                const handelerr = v => {
+                    // 设置错误消息
+                    errorMessage.value = v;
+                    // 检查是否有错误
+                };
+
+                return {
+                    form,
+                    formData,
+                    formRules,
+                    handelerr,
+                    submitted,
+                    errorMessage,
+                    closeModal, // 添加了关闭模态框函数的引用
+                    successModal // 添加了成功模态框的显示状态
+                };
+            },
+        });
+
+        // 注册 form-validator 和 form-input 组件
+        app.component('form-validator', FormValidator);
+        app.component('form-input', FormInput);
+        app.mount('#app'); // 挂载 Vue 应用到页面
+    </script>
+</body>
+
+</html>

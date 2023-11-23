@@ -1,0 +1,187 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.8;
+
+  /* TODO: 请在此补充代码实现tab栏动态固定 */
+  position: sticky;
+  top: 0;
+}
+
+/* 请勿修改以下代码 */
+.buttons a {
+  text-decoration: none;
+  padding: 10px;
+  border-bottom: 0;
+  text-align: center;
+  color: #333;
+  width: 5rem;
+}
+
+.buttons a:active {
+  background: whitesmoke;
+  border-color: whitesmoke;
+  color: #333;
+}
+
+/* 页面总体样式 */
+
+body {
+  background: #fafafa;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1em;
+  background-color: rgba(50, 50, 50, .3);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 1em;
+  background-color: rgba(50, 50, 50, .1);
+}
+
+/* 标题栏样式 */
+
+.heading {
+  background-color: rgb(37, 101, 233);
+  color: white;
+  width: 100%;
+}
+
+h1 {
+  height: 3rem;
+  width: 100%;
+  font-size: 150%;
+  margin: 0;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+/* panels */
+.panels {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.panels .panel {
+  max-width: 900px;
+  padding: 2px 10px;
+  padding-right: 20px;
+  display: none;
+  background-color: rgba(37, 101, 233, 0.05);
+  border-radius: 15px;
+}
+
+#recommend {
+  display: block;
+}
+
+.active {
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(37, 101, 233);
+  display: block;
+  height: 0.25rem;
+  width: 60%;
+  left: 20px;
+  bottom: 5px;
+  animation: show-bar .3s both;
+  border-radius: 5px;
+}
+
+.panels .panel h3 {
+  padding-left: 1rem;
+}
+
+.row {
+  border-bottom: 1px solid gainsboro;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 1rem;
+}
+
+h4 {
+  margin-bottom: 0;
+  color: rgba(37, 101, 233);
+  font-size: 1.2rem;
+}
+
+.row .text {
+  border: 1px solid rgba(37, 101, 233, 0.3);
+  border-right: none;
+  border-radius: 10px;
+  padding: 0 1rem;
+  padding-bottom: 1rem;
+  margin: 1rem 0;
+  color: #333;
+}
+
+#about div {
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  color: #333;
+  width: 90%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  height: 70vh;
+}
+
+#about p {
+  font-size: 1.2rem;
+  line-height: 1.85rem;
+}
+
+#about h2 {
+  margin: 0;
+}
+
+#about img {
+  width: 100%;
+}
+
+.row img {
+  width: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 1rem;
+}
+
+@keyframes show-bar {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}

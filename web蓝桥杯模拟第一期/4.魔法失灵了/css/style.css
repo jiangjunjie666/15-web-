@@ -1,0 +1,33 @@
+    /* 样式化代码 */
+    .elements {
+      max-width: 600px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    .element {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f2f2f2;
+    }
+    .name {
+      font-weight: bold;
+    }
+    .value {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button {
+      font-size: 14px;
+      padding: 5px;
+      border: none;
+      border-radius: 3px;
+      background-color: #007bff;
+      color: #fff;
+      margin-right: 5px;
+      margin-left: 5px;
+      cursor: pointer;
+    }

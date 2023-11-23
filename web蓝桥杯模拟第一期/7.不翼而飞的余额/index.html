@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>不翼而飞的余额</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./lib/vue.min.js"></script>
+  <script src="./lib/vueDemi.js"></script>
+  <script src="./lib/pinia.min.js"></script>
+  <script src="./js/store.js"></script>
+  <script src="./component/DepositPage.js"></script>
+  <script src="./component/WalletPage.js"></script>
+  <script src="./lib/vue-router.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="wrapper">
+      <router-view></router-view>
+      <div class="nav">
+        <li><router-link to="/">Wallet</router-link></li>
+        <li><router-link to="/deposit">Deposit</router-link></li>
+      </div>
+    </div>
+  </div>
+  <script>
+    const { createApp } = Vue;
+    const { createPinia } = Pinia;
+    const { createRouter, createWebHistory } = VueRouter;  // TODO：待补充代码，在此引入路由相关 API 
+    const app = createApp({});
+    app.use(createPinia());
+
+    const router = createRouter({
+      // TODO:待补充代码，为项目配置 history 模式的路由
+      history: createWebHistory(),
+      routes: [
+        {
+          path: '/',
+          component: WalletPage
+        },
+        {
+          path: '/deposit',
+          component: DepositPage
+        }
+      ]
+    })
+
+    app.use(router)
+    // 注册组件
+    app.mount("#app");
+  </script>
+</body>
+
+</html>
