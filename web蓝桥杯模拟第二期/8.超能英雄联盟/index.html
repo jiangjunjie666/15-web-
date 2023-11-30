@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./lib/vue.min.js"></script>
+  <script src="./lib/axios.js"></script>
+  <script src="./lib/vueDemi.js"></script>
+  <script src="./lib/pinia.min.js"></script>
+  <script src="./js/store.js"></script>
+  <script src="./components/HeroList.js"></script>
+  <script src="./components/TeamList.js"></script>
+  <title>超能英雄联盟</title>
+</head>
+<body>
+    <div id="app">
+      <div id="app">
+        <h1 class="title">英雄集结</h1>
+        <div class="container">
+          <hero></hero>
+          <team></team>
+        </div>
+      </div>
+    </div>
+</body>
+<script type="module">
+  
+  const { createApp, reactive, ref, onMounted, watch, defineProps, toRefs } = Vue
+  const { createPinia } = Pinia
+  const app = Vue.createApp({});
+  app.component('hero', HeroList)
+  app.component('team', TeamList)
+  app.use(createPinia())
+  app.mount('#app');
+
+</script>
+</html>
+
+
+<style>
+  /* App.vue styles */
+  #app {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  /* HeroList.vue styles */
+  .hero-list {
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  .hero-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #eee;
+  }
+
+  /* TeamList.vue styles */
+  .team-list {
+    width: 40%;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  .team-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #eee;
+  }
+
+  .team-item span,.hero-item span{
+    width: 80px;
+    text-align: center;
+  }
+  
+  .sort-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .sort-button:hover {
+    background-color: #45a049;
+  }
+
+  .total-strength {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+</style>
+
+
+
+  

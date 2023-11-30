@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>星际通讯</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>星际通讯</h1>
+    <div class="container">
+        <label for="alienMessage">请输入外星人的密文：</label>
+        <input type="text" id="alienMessage">
+        <button onclick="translateMessage()">翻译</button>
+        <p id="translatedMessage"></p>
+    </div>
+    <script src="./js/index.js"></script>
+    <script>
+        function translateMessage() {
+            const alienMessage = document.getElementById('alienMessage').value;
+            const translatedMessage = translate(alienMessage);
+            document.getElementById('translatedMessage').textContent = translatedMessage;
+        }
+    </script>
+</body>
+
+</html>

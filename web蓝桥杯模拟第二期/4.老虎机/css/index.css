@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+}
+
+#app {
+  width: 762px;
+  height: 496px;
+  margin: 120px auto 0;
+  background-color: blueviolet;
+  border-radius: 5px;
+}
+.textPanel {
+  width: 339px;
+  height: 101px;
+  line-height: 101px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.panel {
+  background: url("../images/panel-bg.png") no-repeat center top;
+  width: 641px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+.range {
+  width: 615px;
+  height: 271px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  top: 14px;
+}
+.range::before {
+  position: absolute;
+  display: block;
+  content: "";
+  background: url("../images/panel-front.png") no-repeat center top;
+  width: 613px;
+  height: 271px;
+  top: 0;
+  left: 1px;
+  z-index: 1;
+}
+.bar {
+  list-style: none;
+  position: relative;
+  float: left;
+}
+.bar li {
+  padding: 0;
+  box-sizing: border-box;
+  width: 203px;
+  height: 271px;
+  margin: 0 1px;
+}
+.startBtn {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  background-color: red;
+  margin: 26px auto;
+}
+.startBtn:hover {
+  cursor: pointer;
+}
+.startBtn:active {
+  cursor: pointer;
+  background-color: darkred;
+}
+
+.fireworks {
+  position: absolute;
+  transform: scale(0);
+  z-index: -1;
+}
+
+.f1 {
+  top: -20px;
+  left: 10%;
+  animation: fireworks 3s 0.5s;
+}
+.f2 {
+  top: -10px;
+  right: 10%;
+  animation: fireworks 3s 0.25s;
+}
+.f3 {
+  left: 30%;
+  top: -150px;
+  animation: fireworks 3s;
+}
+
+@keyframes fireworks {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}

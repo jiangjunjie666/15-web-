@@ -1,0 +1,670 @@
+[
+  {
+    "province_code": "110000",
+    "name": "北京",
+    "value": 63733,
+    "school_count": 67,
+    "school_power": [
+      {
+        "name": "北京航空航天大学",
+        "power": 1009
+      },
+      {
+        "name": "北方工业大学",
+        "power": 595
+      },
+      {
+        "name": "北京化工大学",
+        "power": 708
+      }
+    ]
+  },
+  {
+    "province_code": "120000",
+    "name": "天津",
+    "value": 26850,
+    "school_count": 34,
+    "school_power": [
+      {
+        "name": "天津科技大学",
+        "power": 676
+      },
+      {
+        "name": "天津仁爱学院",
+        "power": 387
+      },
+      {
+        "name": "天津工业大学",
+        "power": 719
+      }
+    ]
+  },
+  {
+    "province_code": "130000",
+    "name": "河北",
+    "value": 57727,
+    "school_count": 71,
+    "school_power": [
+      {
+        "name": "邯郸学院",
+        "power": 286
+      },
+      {
+        "name": "石家庄铁道大学",
+        "power": 246
+      },
+      {
+        "name": "燕山大学",
+        "power": 243
+      }
+    ]
+  },
+  {
+    "province_code": "140000",
+    "name": "山西",
+    "value": 36068,
+    "school_count": 38,
+    "school_power": [
+      {
+        "name": "中北大学",
+        "power": 180
+      },
+      {
+        "name": "太原学院",
+        "power": 712
+      },
+      {
+        "name": "山西大学",
+        "power": 385
+      }
+    ]
+  },
+  {
+    "province_code": "150000",
+    "name": "内蒙古",
+    "value": 10075,
+    "school_count": 15,
+    "school_power": [
+      {
+        "name": "内蒙古工业大学",
+        "power": 725
+      },
+      {
+        "name": "内蒙古科技大学",
+        "power": 1565
+      },
+      {
+        "name": "内蒙古民族大学",
+        "power": 304
+      }
+    ]
+  },
+  {
+    "province_code": "210000",
+    "name": "辽宁",
+    "value": 62578,
+    "school_count": 57,
+    "school_power": [
+      {
+        "name": "东北大学",
+        "power": 466
+      },
+      {
+        "name": "大连民族大学",
+        "power": 189
+      },
+      {
+        "name": "大连东软信息学院",
+        "power": 402
+      }
+    ]
+  },
+  {
+    "province_code": "220000",
+    "name": "吉林",
+    "value": 21152,
+    "school_count": 36,
+    "school_power": [
+      {
+        "name": "吉林大学",
+        "power": 438
+      },
+      {
+        "name": "长春工业大学",
+        "power": 493
+      },
+      {
+        "name": "长春理工大学",
+        "power": 484
+      }
+    ]
+  },
+  {
+    "province_code": "230000",
+    "name": "黑龙江",
+    "value": 31338,
+    "school_count": 40,
+    "school_power": [
+      {
+        "name": "哈尔滨理工大学",
+        "power": 731
+      },
+      {
+        "name": "哈尔滨工程大学",
+        "power": 334
+      },
+      {
+        "name": "牡丹江师范学院",
+        "power": 205
+      }
+    ]
+  },
+  {
+    "province_code": "310000",
+    "name": "上海",
+    "value": 33857,
+    "school_count": 38,
+    "school_power": [
+      {
+        "name": "华东理工大学",
+        "power": 772
+      },
+      {
+        "name": "上海理工大学",
+        "power": 738
+      },
+      {
+        "name": "东华大学",
+        "power": 160
+      }
+    ]
+  },
+  {
+    "province_code": "320000",
+    "name": "江苏",
+    "value": 180080,
+    "school_count": 138,
+    "school_power": [
+      {
+        "name": "南京信息工程大学",
+        "power": 129
+      },
+      {
+        "name": "苏州大学",
+        "power": 339
+      },
+      {
+        "name": "南京林业大学",
+        "power": 616
+      }
+    ]
+  },
+  {
+    "province_code": "330000",
+    "name": "浙江",
+    "value": 36882,
+    "school_count": 88,
+    "school_power": [
+      {
+        "name": "台州学院",
+        "power": 198
+      },
+      {
+        "name": "浙江传媒学院",
+        "power": 526
+      },
+      {
+        "name": "湖州师范学院",
+        "power": 359
+      }
+    ]
+  },
+  {
+    "province_code": "340000",
+    "name": "安徽",
+    "value": 32691,
+    "school_count": 64,
+    "school_power": [
+      {
+        "name": "合肥工业大学",
+        "power": 728
+      },
+      {
+        "name": "安徽理工大学",
+        "power": 604
+      },
+      {
+        "name": "安徽大学",
+        "power": 530
+      }
+    ]
+  },
+  {
+    "province_code": "350000",
+    "name": "福建",
+    "value": 48960,
+    "school_count": 59,
+    "school_power": [
+      {
+        "name": "莆田学院",
+        "power": 533
+      },
+      {
+        "name": "闽南理工学院",
+        "power": 513
+      },
+      {
+        "name": "厦门大学",
+        "power": 430
+      }
+    ]
+  },
+  {
+    "province_code": "360000",
+    "name": "江西",
+    "value": 94192,
+    "school_count": 80,
+    "school_power": [
+      {
+        "name": "东华理工大学",
+        "power": 584
+      },
+      {
+        "name": "江西师范大学",
+        "power": 1237
+      },
+      {
+        "name": "南昌航空大学",
+        "power": 176
+      }
+    ]
+  },
+  {
+    "province_code": "370000",
+    "name": "山东",
+    "value": 160280,
+    "school_count": 115,
+    "school_power": [
+      {
+        "name": "山东科技大学",
+        "power": 479
+      },
+      {
+        "name": "青岛科技大学",
+        "power": 472
+      },
+      {
+        "name": "齐鲁工业大学",
+        "power": 235
+      }
+    ]
+  },
+  {
+    "province_code": "410000",
+    "name": "河南",
+    "value": 126015,
+    "school_count": 107,
+    "school_power": [
+      {
+        "name": "河南大学",
+        "power": 700
+      },
+      {
+        "name": "郑州轻工业大学",
+        "power": 231
+      },
+      {
+        "name": "郑州大学",
+        "power": 679
+      }
+    ]
+  },
+  {
+    "province_code": "420000",
+    "name": "湖北",
+    "value": 129271,
+    "school_count": 106,
+    "school_power": [
+      {
+        "name": "中南民族大学",
+        "power": 426
+      },
+      {
+        "name": "武汉科技大学",
+        "power": 213
+      },
+      {
+        "name": "武汉工程大学",
+        "power": 587
+      }
+    ]
+  },
+  {
+    "province_code": "430000",
+    "name": "湖南",
+    "value": 73930,
+    "school_count": 78,
+    "school_power": [
+      {
+        "name": "湖南信息学院",
+        "power": 564
+      },
+      {
+        "name": "长沙学院",
+        "power": 346
+      },
+      {
+        "name": "吉首大学",
+        "power": 295
+      }
+    ]
+  },
+  {
+    "province_code": "440000",
+    "name": "广东",
+    "value": 181389,
+    "school_count": 130,
+    "school_power": [
+      {
+        "name": "广东工业大学",
+        "power": 473
+      },
+      {
+        "name": "佛山科学技术学院",
+        "power": 693
+      },
+      {
+        "name": "华南师范大学",
+        "power": 1453
+      }
+    ]
+  },
+  {
+    "province_code": "450000",
+    "name": "广西",
+    "value": 59784,
+    "school_count": 55,
+    "school_power": [
+      {
+        "name": "桂林电子科技大学",
+        "power": 264
+      },
+      {
+        "name": "南宁学院",
+        "power": 120
+      },
+      {
+        "name": "广西师范大学",
+        "power": 716
+      }
+    ]
+  },
+  {
+    "province_code": "460000",
+    "name": "海南",
+    "value": 6082,
+    "school_count": 12,
+    "school_power": [
+      {
+        "name": "海南大学",
+        "power": 171
+      },
+      {
+        "name": "三亚学院",
+        "power": 876
+      },
+      {
+        "name": "海南科技职业大学",
+        "power": 363
+      }
+    ]
+  },
+  {
+    "province_code": "500000",
+    "name": "重庆",
+    "value": 57573,
+    "school_count": 49,
+    "school_power": [
+      {
+        "name": "重庆邮电大学",
+        "power": 127
+      },
+      {
+        "name": "重庆工程学院",
+        "power": 233
+      },
+      {
+        "name": "重庆科技学院",
+        "power": 388
+      }
+    ]
+  },
+  {
+    "province_code": "510000",
+    "name": "四川",
+    "value": 122869,
+    "school_count": 86,
+    "school_power": [
+      {
+        "name": "成都理工大学",
+        "power": 269
+      },
+      {
+        "name": "电子科技大学",
+        "power": 355
+      },
+      {
+        "name": "西南交通大学",
+        "power": 245
+      }
+    ]
+  },
+  {
+    "province_code": "520000",
+    "name": "贵州",
+    "value": 19700,
+    "school_count": 36,
+    "school_power": [
+      {
+        "name": "贵州大学",
+        "power": 1022
+      },
+      {
+        "name": "贵州大学明德学院",
+        "power": 699
+      },
+      {
+        "name": "贵州航天职业技术学院",
+        "power": 211
+      }
+    ]
+  },
+  {
+    "province_code": "530000",
+    "name": "云南",
+    "value": 24903,
+    "school_count": 37,
+    "school_power": [
+      {
+        "name": "昆明理工大学",
+        "power": 134
+      },
+      {
+        "name": "丽江文化旅游学院",
+        "power": 440
+      },
+      {
+        "name": "大理大学",
+        "power": 130
+      }
+    ]
+  },
+  {
+    "province_code": "540000",
+    "name": "西藏",
+    "value": 1825,
+    "school_count": 2,
+    "school_power": [
+      {
+        "name": "西藏民族大学",
+        "power": 513
+      },
+      {
+        "name": "西藏大学",
+        "power": 520
+      }
+    ]
+  },
+  {
+    "province_code": "610000",
+    "name": "陕西",
+    "value": 75349,
+    "school_count": 65,
+    "school_power": [
+      {
+        "name": "中国人民解放军空军工程大学",
+        "power": 468
+      },
+      {
+        "name": "西安科技大学",
+        "power": 483
+      },
+      {
+        "name": "西安交通大学",
+        "power": 245
+      }
+    ]
+  },
+  {
+    "province_code": "620000",
+    "name": "甘肃",
+    "value": 22384,
+    "school_count": 28,
+    "school_power": [
+      {
+        "name": "兰州理工大学",
+        "power": 343
+      },
+      {
+        "name": "兰州财经大学",
+        "power": 218
+      },
+      {
+        "name": "兰州大学",
+        "power": 464
+      }
+    ]
+  },
+  {
+    "province_code": "630000",
+    "name": "青海",
+    "value": 2826,
+    "school_count": 5,
+    "school_power": [
+      {
+        "name": "青海大学",
+        "power": 351
+      },
+      {
+        "name": "青海师范大学",
+        "power": 431
+      },
+      {
+        "name": "青海民族大学",
+        "power": 1353
+      }
+    ]
+  },
+  {
+    "province_code": "640000",
+    "name": "宁夏",
+    "value": 10449,
+    "school_count": 8,
+    "school_power": [
+      {
+        "name": "宁夏大学",
+        "power": 387
+      },
+      {
+        "name": "北方民族大学",
+        "power": 733
+      },
+      {
+        "name": "宁夏理工学院",
+        "power": 378
+      }
+    ]
+  },
+  {
+    "province_code": "650000",
+    "name": "新疆",
+    "value": 19260,
+    "school_count": 23,
+    "school_power": [
+      {
+        "name": "新疆大学",
+        "power": 1126
+      },
+      {
+        "name": "新疆师范大学",
+        "power": 633
+      },
+      {
+        "name": "新疆理工学院",
+        "power": 323
+      }
+    ]
+  },
+  {
+    "province_code": "810000",
+    "name": "香港",
+    "value": 1022,
+    "school_count": 1,
+    "school_power": [
+      {
+        "name": "香港理工大学",
+        "power": 450
+      }
+    ]
+  },
+  {
+    "province_code": "820000",
+    "name": "澳门",
+    "value": 1077,
+    "school_count": 3,
+    "school_power": [
+      {
+        "name": "澳门科技大学",
+        "power": 234
+      },
+      {
+        "name": "澳门大学",
+        "power": 303
+      },
+      {
+        "name": "澳门理工大学",
+        "power": 663
+      }
+    ]
+  },
+  {
+    "province_code": "999000",
+    "name": "海外",
+    "value": 1033,
+    "school_count": 3,
+    "school_power": [
+      {
+        "name": "筑波大学",
+        "power": 220
+      },
+      {
+        "name": "伊利诺伊大学厄巴纳-香槟分校",
+        "power": 144
+      },
+      {
+        "name": "亚利桑那大学",
+        "power": 666
+      }
+    ]
+  }
+]

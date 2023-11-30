@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>电影院订票</title>
+  </head>
+  <body>
+    <div class="movie-container">
+      <div>电影名： <span id="movie-name"></span></div>
+      <div>票价： <span id="movie-price"></span>￥</div>
+    </div>
+
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>N/A</small>
+      </li>
+      <li>
+        <div class="seat selected"></div>
+        <small>选择的座位</small>
+      </li>
+      <li>
+        <div class="seat occupied"></div>
+        <small>已被他人预定</small>
+      </li>
+    </ul>
+
+    <div class="container">
+      <div class="screen"></div>
+      <div id="seat-area"></div>
+    </div>
+    <p class="text">
+      你已经选择<span id="count">0</span> 个座位，总价为 ￥<span id="total"
+        >0</span
+      >
+    </p>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

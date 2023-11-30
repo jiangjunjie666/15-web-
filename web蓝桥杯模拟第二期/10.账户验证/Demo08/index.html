@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>账户验证</title>
+  <link rel="stylesheet" type="text/css" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/element-plus@2.3.7/index.css">
+  <script src="./js/vue3.global.js"></script>
+  <script src="./css/element-plus@2.3.7/index.full.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "vue-demi": "./js/index.mjs",
+        "vue": "./js/vue.esm-browser.prod.js",
+        "pinia": "./js/pinia.esm-browser.js"
+      }
+    }
+  </script>
+  <script src="./js/pinia.esm-browser.js" type="module"></script>
+</head>
+
+<body>
+  <!-- app根组件开始 -->
+  <div id="app">
+    <div class="header">
+      <img class="back-btn" src="images/arrow.png" />
+      <span id="main_title">使用手机号登录</span>
+      <span class="blank"></span>
+    </div>
+    <component :is="showName"></component>
+  </div>
+  <!-- app根组件结束 -->
+
+  <!-- phone组件开始 -->
+  <template id="phone">
+    <div>
+      <ul class="phone">
+        <span>输入手机号码</span>
+        <li>
+          <input v-model="phoneVal" type="text" autofocus id="numberInput" />
+        </li>
+        <li>
+          <input v-model="isSure" type="checkbox" name="" id="checkbox" />
+          <span>已阅读并同意
+            <a href="javascript:;">服务协议</a>
+            和
+            <a href="javascript:;">隐私保护指引</a>
+          </span>
+        </li>
+        <button id="btn" @click="nextStep">下一步</button>
+      </ul>
+    </div>
+  </template>
+  <!-- phone组件结束 -->
+
+  <!-- check组件开始 -->
+  <template id="check">
+    <ul class="number">
+      <span>输入短信验证码</span>
+      <li class="hassend">已向
+        <i>{{ handlePhoneVal }}</i>
+        发送验证码
+      </li>
+      <li class="code-container">
+        <input v-for="(item, index) in verificationCodeInput" :key="index" v-model="item" @input="handleInput(index)"
+          @keydown="handleKeyDown(index)" class="code" type="number" min="0" max="9" ref="codeInput{{index}}"
+          required />
+      </li>
+      <a href="javascript:;" id="resend" @click="resendCode">重新发送</a>
+    </ul>
+  </template>
+  <!-- check组件结束 -->
+
+  <!-- success组件开始 -->
+  <template id="success">
+    <div class="success">
+      <ul>
+        <div>验证成功！</div>
+        <div>5s后将自动跳转</div>
+      </ul>
+    </div>
+  </template>
+  <!-- success组件结束 -->
+</body>
+
+<script type="module">
+  import { createPinia } from 'pinia';
+  import { createApp, ref, reactive, provide, inject, onBeforeMount } from 'vue';
+  const { ElNotification } = ElementPlus;
+
+  const app = createApp({
+    setup() {
+      const data = reactive({
+        showName: 'phone',
+      });
+
+      const code = ref([]);
+      const phoneVal = ref('');
+      const createCode = function () {
+        let res = '';
+        function* _create() {
+          let count = 0;
+          while (++count <= 6) {
+            yield Math.floor(Math.random() * 10);
+          }
+        }
+        for (const iterator of _create()) {
+          res += iterator;
+        }
+        return res;
+      };
+
+      const handlePhone = (num) => {
+        let res = '';
+        for (let idx in num) {
+          if (idx > 2 && idx < num.length - 2) {
+            res += '*';
+          } else {
+            res += num[idx];
+          }
+        }
+        return res;
+      };
+
+      provide('code', code);
+      provide('phoneVal', phoneVal);
+      provide('createCode', createCode);
+      provide('data', data);
+      provide('handlePhone', handlePhone);
+
+      return {
+        ...data,
+      };
+    },
+  });
+
+  app.use(ElementPlus);
+  app.use(createPinia());
+
+  app.component('phone', {
+    template: '#phone',
+    setup() {
+      const isSure = ref('');
+      const phoneVal = inject('phoneVal');
+      const code = inject('code');
+      const createCode = inject('createCode');
+      const data = inject('data');
+
+      function verifyPhone(num) {
+        if (num.length !== 11) return false;
+        return num[0] === '1' && num[1] === '8';
+      }
+
+      return {
+        isSure,
+        phoneVal,
+        nextStep() {
+          if (!isSure.value)
+            return ElNotification({
+              title: '发送失败',
+              message: '请先阅读并同意下方协议',
+              type: 'error',
+            });
+          if (!verifyPhone(phoneVal.value))
+            return ElNotification({
+              title: '发送失败',
+              message: '无效的手机号码',
+              type: 'error',
+            });
+          code.value = createCode();
+          ElNotification({
+            title: '发送成功',
+            message: '您在验证码为' + code.value,
+            type: 'success',
+          });
+          data.showName = 'check';
+        },
+      };
+    },
+  });
+
+  app.component('check', {
+    template: '#check',
+    setup() {
+      const phoneVal = inject('phoneVal');
+      const handlePhoneVal = inject('handlePhone')(phoneVal.value);
+      const data = inject('data');
+      const code = inject('code');
+      const createCode = inject('createCode');
+      const verificationCodeInput = Array(6).fill('');
+
+      onBeforeMount(() => {
+        setTimeout(() => {
+          const oCodeIptList = [...document.getElementsByClassName('code')];
+
+          oCodeIptList[0].focus();
+
+          oCodeIptList.map((item) => {
+            item.oninput = function () {
+              if (item.value) {
+                item?.nextElementSibling && item?.nextElementSibling.focus();
+              } else {
+                item?.previousElementSibling && item?.previousElementSibling.focus();
+              }
+              trackVal();
+            };
+          });
+
+          function trackVal() {
+            const val = verificationCodeInput.join('');
+            if (val.length === 6) {
+              if (val === code.value) {
+                ElNotification({
+                  title: '验证成功',
+                  message: '欢迎回来',
+                  type: 'success',
+                });
+                data.showName = 'success';
+              } else {
+                ElNotification({
+                  title: '验证失败',
+                  message: '您输入的验证码有误',
+                  type: 'error',
+                });
+                verificationCodeInput.fill('');
+                oCodeIptList[0].focus();
+              }
+            }
+          }
+        });
+      });
+
+      return {
+        handlePhoneVal,
+        verificationCodeInput,
+        handleInput(index) {
+          if (index < 5 && verificationCodeInput[index].length === 1) {
+            this.$refs[`codeInput${index + 1}`]?.focus();
+          } else if (index > 0 && verificationCodeInput[index].length === 0) {
+            this.$refs[`codeInput${index - 1}`]?.focus();
+          }
+          trackVal();
+        },
+        handleKeyDown(index) {
+          if (event.key === 'Backspace' && index > 0) {
+            this.$refs[`codeInput${index - 1}`]?.focus();
+          }
+        },
+        trackVal() {
+          const val = verificationCodeInput.join('');
+          if (val.length === 6) {
+            if (val === code.value) {
+              ElNotification({
+                title: '验证成功',
+                message: '欢迎回来',
+                type: 'success',
+              });
+              data.showName = 'success';
+            } else {
+              ElNotification({
+                title: '验证失败',
+                message: '您输入的验证码有误',
+                type: 'error',
+              });
+              verificationCodeInput.fill('');
+              this.$refs['codeInput0']?.focus();
+            }
+          }
+        },
+        resendCode() {
+          code.value = createCode();
+          ElNotification({
+            title: '发送成功',
+            message: '您的验证码为' + code.value,
+            type: 'success',
+          });
+        },
+      };
+    },
+  });
+
+  app.component('success', {
+    template: '#success',
+  });
+
+  app.mount('#app');
+</script>
+
+</html>

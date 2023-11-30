@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>设置权限日志</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <article id="app-container">
+    <header>
+      <h1>勾选或取消勾选下面“用户权限列表”中用户数据对应的“修改权限”复选框，可以对该用户的登录权限进行修改。
+      </h1>
+    </header>
+    <div id="app">
+      <main>
+        <h1>用户权限列表</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>姓名</th>
+              <th>是否有登录权限</th>
+              <th>修改权限</th>
+            </tr>
+          </thead>
+          <tbody @click="handleChange">
+            <tr v-for="item in data.userList" :key="item.id">
+              <td>{{item.name}}</td>
+              <td>{{getPowerText(item.power)}}
+              </td>
+              <td data-dom="input"><input :data-id="item.id" type="checkbox" :checked="item.power" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+      <footer>
+        <h1>日志查看区域</h1>
+        <ul v-show="data.loggerList.length">
+          <li v-for="item in data.loggerList" :key="item.id">
+            <span>信息：{{ item.msg }}</span>
+            <span>时间：{{ item.time }}</span>
+          </li>
+        </ul>
+      </footer>
+    </div>
+  </article>
+  <script src="./js/axios.min.js"></script>
+  <script src="./js/vue3.global.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

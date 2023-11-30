@@ -1,0 +1,11 @@
+[
+  { "id": 1, "name": "绯红女巫", "ability": "混沌魔法", "strength": 98 },
+  { "id": 2, "name": "蜘蛛侠", "ability": "蜘蛛感应", "strength": 70 },
+  { "id": 3, "name": "雷神", "ability": "雷电之力", "strength": 88 },
+  { "id": 4, "name": "绿巨人", "ability": "超人的力量", "strength": 82 },
+  { "id": 5, "name": "奇异博士", "ability": "至尊魔法师", "strength": 74 },
+  { "id": 6, "name": "美国队长", "ability": "异于常人的能力", "strength": 68 },
+  { "id": 7, "name": "斯坦李", "ability": "所有英雄的创作者", "strength": 999 },
+  { "id": 8, "name": "黑豹", "ability": "各项超人体能", "strength": 69 },
+  { "id": 9, "name": "惊奇队长", "ability": "次元感知", "strength": 99 }
+]
